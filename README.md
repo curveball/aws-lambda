@@ -1,12 +1,12 @@
-Curveball New Package
-=====================
+Curveball AWS Lamba Handler
+===========================
 
-This repository serves as the skeleton for all new [Curveball][1] packages.
+AWS lambda bindings for curveball. Go 'serverless' with [Curveball][1].
 
 Installation
 ------------
 
-    npm install @curveball/new-package 
+    npm install @curveball/aws-lambda
 
 
 Getting started
@@ -19,4 +19,4 @@ API
 
 ...
 
-[1]: https://github.com/curveballjs/
+[1]: https://github.com/curveballjs
