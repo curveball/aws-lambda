@@ -19,4 +19,4 @@ API
 
 ...
 
-[1]: https://github.com/curveballjs
+[1]: https://github.com/curveball

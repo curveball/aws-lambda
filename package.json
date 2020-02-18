@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/curveballjs/aws-lambda.git"
+    "url": "git+https://github.com/curveball/aws-lambda.git"
   },
   "files": [
     "package.json",
@@ -34,9 +34,9 @@
   "author": "Evert Pot (https://evertpot.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/curveballjs/aws-lambda/issues"
+    "url": "https://github.com/curveball/aws-lambda/issues"
   },
-  "homepage": "https://github.com/curveballjs/aws-lambda#readme",
+  "homepage": "https://github.com/curveball/aws-lambda#readme",
   "devDependencies": {
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
