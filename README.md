@@ -1,8 +1,6 @@
 Curveball AWS Lamba Handler
 ===========================
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/curveballjs/aws-lambda.svg)](https://greenkeeper.io/)
-
 AWS lambda bindings for curveball. Go 'serverless' with [Curveball][1].
 
 Installation
@@ -14,11 +12,20 @@ Installation
 Getting started
 ---------------
 
-...
+After you've constructed your curveball `Application` as usual, you can
+simply use the `aws-lambda` package to convert it to a 'handler' that
+Lambda supports:
 
-API
----
+```typescript
+import { Application } from '@curveball/core';
+import { handler } from '@curveball/aws-lambda'
 
-...
+const app = new Application();
+app.use( ctx => {
+  ctx.response.body = 'hello world';
+});
+
+exports.handler = handler(app);
+```
 
 [1]: https://github.com/curveball
