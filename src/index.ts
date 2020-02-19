@@ -20,10 +20,21 @@ export default function lambdaHandler(app: Application): AwsLambdaHandler {
 
     const [isBase64Encoded, body] = convertBody(context.response);
 
+    const headers: {[key:string]:string} = {};
+    for(const [name, val] of Object.entries(response.headers.getAll())) {
+      if (typeof val === 'number') {
+        headers[name] = val.toString();
+      } else if (Array.isArray(val)) {
+        headers[name] = val.join(',');
+      } else {
+        headers[name] = val;
+      }
+    }
+
     return {
       isBase64Encoded,
       statusCode: context.response.status,
-      headers: {},
+      headers: headers,
       multiValueHeaders: convertHeaders(context.response),
       body
     };
