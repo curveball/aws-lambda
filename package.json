@@ -59,5 +59,14 @@
     "extension": [
       ".ts"
     ]
+  },
+  "mocha": {
+    "require": "ts-node/register",
+    "recursive": true,
+    "extension": [
+      "ts",
+      "js",
+      "tsx"
+    ]
   }
 }
