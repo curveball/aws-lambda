@@ -18,10 +18,10 @@ Lambda supports:
 
 ```typescript
 import { Application } from '@curveball/core';
-import { handler } from '@curveball/aws-lambda'
+import handler from '@curveball/aws-lambda';
 
 const app = new Application();
-app.use( ctx => {
+app.use(ctx => {
   ctx.response.body = 'hello world';
 });
 
