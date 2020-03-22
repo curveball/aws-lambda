@@ -8,9 +8,9 @@ Installation
 
     npm install @curveball/aws-lambda
 
-Or if you're using TypeScript.
+If you're using typescript, you will also want the types package for `aws-lambda`:
 
-    npm install @curveball/aws-lambda @types/aws-lambda
+    npm install -D @types/aws-lambda
 
 
 Getting started
