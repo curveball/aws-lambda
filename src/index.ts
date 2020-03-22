@@ -1,17 +1,17 @@
 import { Application, Context, MemoryRequest, MemoryResponse } from '@curveball/core';
+import { APIGatewayProxyHandler, APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import qs from 'querystring';
-import { AwsLambdaHandler, AwsRequest, AwsResponse } from './types';
 import { convertBody, convertHeaders } from './util';
 
-export default function lambdaHandler(app: Application): AwsLambdaHandler {
+export default function lambdaHandler(app: Application): APIGatewayProxyHandler {
 
-  return async (awsRequest: AwsRequest): Promise<AwsResponse> => {
+  return async (awsEvent: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
 
     const request = new MemoryRequest(
-      awsRequest.httpMethod,
-      awsRequest.path + '?' + qs.stringify(awsRequest.multiValueQueryStringParameters),
-      awsRequest.headers,
-      awsRequest.isBase64Encoded ? Buffer.from(awsRequest.body, 'base64') : awsRequest.body,
+      awsEvent.httpMethod,
+      awsEvent.path + '?' + qs.stringify(awsEvent.multiValueQueryStringParameters ?? undefined),
+      awsEvent.headers,
+      awsEvent.isBase64Encoded ? Buffer.from(awsEvent.body ?? '', 'base64') : awsEvent.body,
     );
     const response = new MemoryResponse();
     const context = new Context(request, response);
@@ -42,4 +42,3 @@ export default function lambdaHandler(app: Application): AwsLambdaHandler {
   };
 
 }
-
