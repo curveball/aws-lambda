@@ -37,10 +37,8 @@
     "url": "https://github.com/curveball/aws-lambda/issues"
   },
   "homepage": "https://github.com/curveball/aws-lambda#readme",
-  "dependencies": {
-    "@types/aws-lambda": "~8.10.46"
-  },
   "devDependencies": {
+    "@types/aws-lambda": "~8.10.46",
     "@types/chai": "^4.2.9",
     "@types/mocha": "^7.0.1",
     "@types/node": "^12.12.27",
