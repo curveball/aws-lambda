@@ -13,14 +13,14 @@ test:
 
 .PHONY:lint
 lint:
-	tslint -p .
+	eslint --quiet 'src/*.ts' 'test/*.ts'
 
 .PHONY:lint-fix
 lint-fix: fix
 
 .PHONY:fix
 fix:
-	tslint -p . --fix
+	eslint --quiet 'src/**/*.ts' 'test/**/*.ts' --fix
 
 .PHONY:watch
 watch:
@@ -28,6 +28,10 @@ watch:
 
 .PHONY:start
 start: build
+
+.PHONY:clean
+clean:
+	rm -r dist
 
 dist/build: $(SOURCE_FILES)
 	tsc
