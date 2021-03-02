@@ -39,18 +39,18 @@
   "homepage": "https://github.com/curveball/aws-lambda#readme",
   "devDependencies": {
     "@curveball/core": "^0.15.0",
-    "@types/aws-lambda": "^8.10.64",
-    "@types/chai": "^4.2.14",
-    "@types/mocha": "^8.0.4",
-    "@types/node": "^12.19.8",
-    "@typescript-eslint/eslint-plugin": "^4.9.0",
-    "@typescript-eslint/parser": "^4.9.0",
-    "chai": "^4.2.0",
-    "eslint": "^7.15.0",
-    "mocha": "^8.2.1",
+    "@types/aws-lambda": "^8.10.72",
+    "@types/chai": "^4.2.15",
+    "@types/mocha": "^8.2.1",
+    "@types/node": "^12.20.4",
+    "@typescript-eslint/eslint-plugin": "^4.16.1",
+    "@typescript-eslint/parser": "^4.16.1",
+    "chai": "^4.3.0",
+    "eslint": "^7.21.0",
+    "mocha": "^8.3.0",
     "nyc": "^15.1.0",
-    "ts-node": "^9.1.0",
-    "typescript": "^4.1.2"
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.2"
   },
   "peerDependencies": {
     "@curveball/core": ">=0.16 <1"
