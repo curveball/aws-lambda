@@ -1,7 +1,13 @@
 Changelog
 =========
 
-0.2.1 (2020-12-06)
+0.2.2 (2021-03-02)
+------------------
+
+* Fix a typing issue with new aws-sdk packages.
+
+
+0.2.1 (2021-03-02)
 ------------------
 
 * Update @curveball/core dependency.
