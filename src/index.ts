@@ -10,10 +10,11 @@ export default function lambdaHandler(app: Application): APIGatewayProxyHandler 
     const request = new MemoryRequest(
       awsEvent.httpMethod,
       awsEvent.path + '?' + qs.stringify(awsEvent.multiValueQueryStringParameters ?? undefined),
+      app.origin,
       awsEvent.headers as Record<string, string>,
       awsEvent.isBase64Encoded ? Buffer.from(awsEvent.body ?? '', 'base64') : awsEvent.body,
     );
-    const response = new MemoryResponse();
+    const response = new MemoryResponse(app.origin);
     const context = new BaseContext(request, response);
 
     await app.handle(context);
