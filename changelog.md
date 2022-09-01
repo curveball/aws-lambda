@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.2.3 (2022-09-01)
+------------------
+
+* Mark this package as incompatible with Curveball 0.19. CB 0.19 changed it's
+  API, so we must also do a new minor release here.
+
+
 0.2.2 (2021-03-02)
 ------------------
 
