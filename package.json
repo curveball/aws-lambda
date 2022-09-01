@@ -5,8 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "prepublishOnly": "make build",
-    "test": "make lint test",
+    "test": "make test",
     "tsc": "tsc",
+    "lint": "make lint",
     "start": "make start"
   },
   "repository": {
@@ -60,6 +61,9 @@
     "extension": [
       ".ts"
     ]
+  },
+  "engines": {
+    "node": ">= 14"
   },
   "mocha": {
     "require": "ts-node/register",
