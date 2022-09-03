@@ -21,7 +21,7 @@ simply use the `aws-lambda` package to convert it to a 'handler' that
 Lambda supports:
 
 ```typescript
-import { Application } from '@curveball/core';
+import { Application } from '@curveball/kernel';
 import handler from '@curveball/aws-lambda';
 
 const app = new Application();

@@ -1,4 +1,4 @@
-import { Response } from '@curveball/core';
+import { Response } from '@curveball/kernel';
 import { KeyMultiValue } from './types';
 
 export function convertHeaders(response: Response): KeyMultiValue {
