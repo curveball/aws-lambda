@@ -1,4 +1,4 @@
-import { Application, BaseContext, MemoryRequest, MemoryResponse } from '@curveball/core';
+import { Application, Context, MemoryRequest, MemoryResponse } from '@curveball/kernel';
 import { APIGatewayProxyHandler, APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda';
 import * as qs from 'querystring';
 import { convertBody, convertHeaders } from './util';
@@ -15,7 +15,7 @@ export default function lambdaHandler(app: Application): APIGatewayProxyHandler 
       awsEvent.isBase64Encoded ? Buffer.from(awsEvent.body ?? '', 'base64') : awsEvent.body,
     );
     const response = new MemoryResponse(app.origin);
-    const context = new BaseContext(request, response);
+    const context = new Context(request, response);
 
     await app.handle(context);
 
