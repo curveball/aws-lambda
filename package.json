@@ -2,24 +2,16 @@
   "name": "@curveball/aws-lambda",
   "version": "0.4.0",
   "description": "AWS Lambda handler for curveball",
-  "main": "dist/index.js",
-  "scripts": {
-    "prepublishOnly": "make build",
-    "test": "make test",
-    "tsc": "tsc",
-    "lint": "make lint",
-    "start": "make start"
+  "type": "module",
+  "exports": {
+    "require": "./cjs/index.js",
+    "import": "./esm/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/curveball/aws-lambda.git"
+  "main": "cjs/index.js",
+  "homepage": "https://github.com/curveball/aws-lambda#readme",
+  "bugs": {
+    "url": "https://github.com/curveball/aws-lambda/issues"
   },
-  "files": [
-    "package.json",
-    "README.md",
-    "dist",
-    "LICENSE"
-  ],
   "keywords": [
     "http",
     "framework",
@@ -34,37 +26,52 @@
   ],
   "author": "Evert Pot (https://evertpot.com/)",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/curveball/aws-lambda/issues"
+  "scripts": {
+    "prepublishOnly": "make build",
+    "test": "make test",
+    "lint": "make lint",
+    "fix": "make fix",
+    "tsc": "tsc",
+    "start": "make start"
   },
-  "homepage": "https://github.com/curveball/aws-lambda#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/curveball/aws-lambda.git"
+  },
+  "peerDependencies": {
+    "@curveball/kernel": ">=0.21.0 <1"
+  },
   "devDependencies": {
-    "@curveball/kernel": ">=0.20 <1",
+    "@curveball/kernel": "^0.21.0",
     "@types/aws-lambda": "^8.10.72",
     "@types/chai": "^4.2.15",
-    "@types/mocha": "^9.1.1",
-    "@types/node": "^14.18.26",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^16.18.12",
     "@typescript-eslint/eslint-plugin": "^5.36.1",
     "@typescript-eslint/parser": "^5.36.1",
     "chai": "^4.3.0",
     "eslint": "^8.23.0",
-    "mocha": "^10.0.0",
+    "mocha": "^10.2.0",
     "nyc": "^15.1.0",
-    "sinon": "^14.0.0",
+    "sinon": "^15.0.1",
     "ts-node": "^10.9.1",
     "typescript": "^4.2.2"
   },
-  "types": "dist/",
-  "nyc": {
-    "extension": [
-      ".ts"
-    ]
-  },
   "engines": {
-    "node": ">= 14"
+    "node": ">= 16"
   },
+  "files": [
+    "package.json",
+    "README.md",
+    "esm",
+    "cjs",
+    "LICENSE",
+    "src"
+  ],
   "mocha": {
-    "require": "ts-node/register",
+    "loader": [
+      "ts-node/esm"
+    ],
     "recursive": true,
     "extension": [
       "ts",
@@ -72,7 +79,9 @@
       "tsx"
     ]
   },
-  "peerDependencies": {
-    "@curveball/kernel": ">=0.20.0 <1"
+  "nyc": {
+    "extension": [
+      ".ts"
+    ]
   }
 }
